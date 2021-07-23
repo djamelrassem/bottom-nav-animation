@@ -44,7 +44,7 @@ class _AnimatedButtonState extends State<AnimatedButton> {
             duration: Duration(milliseconds: 150),
             style: TextStyle(
                 color: Colors.white.withOpacity(widget.selected ? 1 : 0),
-                fontSize: size ? 24 : 0),
+                fontSize: size ? 22 : 0),
             child: Text(
               ' ' + widget.text,
               textAlign: TextAlign.justify,
