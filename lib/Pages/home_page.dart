@@ -14,6 +14,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
+        controller: controller,
         children: [
           Container(
             color: Color(0xffCDD5FF),
@@ -41,7 +42,9 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: BottomNavBar(
+        screenController: controller,
+      ),
     );
   }
 }
