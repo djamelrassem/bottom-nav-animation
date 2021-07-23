@@ -38,7 +38,6 @@ class _AnimatedButtonState extends State<AnimatedButton> {
           AnimatedDefaultTextStyle(
             onEnd: () {
               setState(() {
-                print('end');
                 size = widget.selected;
               });
             },
