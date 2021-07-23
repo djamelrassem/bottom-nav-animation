@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 import 'animated_button.dart';
 
 class BottomNavBar extends StatefulWidget {
+  final PageController screenController;
   const BottomNavBar({
     Key? key,
+    required this.screenController,
   }) : super(key: key);
 
   @override
@@ -46,6 +48,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
               SizedBox(),
             ]),
           ),
+          Container(
+            color: Colors.red.withOpacity(0),
+          ),
           Row(
             children: [
               SizedBox(
@@ -54,6 +59,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
               Expanded(
                 child: AnimatedButton(
                   onTap: () {
+                    widget.screenController.animateToPage(0,
+                        duration: Duration(milliseconds: 300),
+                        curve: Curves.linear);
                     pageController.animateToPage(3,
                         duration: Duration(milliseconds: 300),
                         curve: Curves.linear);
@@ -73,6 +81,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
               Expanded(
                 child: AnimatedButton(
                   onTap: () {
+                    widget.screenController.animateToPage(1,
+                        duration: Duration(milliseconds: 300),
+                        curve: Curves.linear);
                     pageController.animateToPage(2,
                         duration: Duration(milliseconds: 300),
                         curve: Curves.linear);
@@ -92,6 +103,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
               Expanded(
                 child: AnimatedButton(
                   onTap: () {
+                    widget.screenController.animateToPage(2,
+                        duration: Duration(milliseconds: 300),
+                        curve: Curves.linear);
                     pageController.animateToPage(1,
                         duration: Duration(milliseconds: 300),
                         curve: Curves.linear);
